@@ -26,12 +26,13 @@ const testimonials = [
 ]
 
 const sideAvatars = [
-  { src: '/avatar3.png', size: 72, className: 'testi__side-avatar testi__side-avatar--tl', alt: 'Client' },
-  { src: '/avatar2.png', size: 96, className: 'testi__side-avatar testi__side-avatar--ml', alt: 'Client' },
-  { src: '/avatar4.png', size: 60, className: 'testi__side-avatar testi__side-avatar--bl', alt: 'Client' },
-  { src: '/avatar6.png', size: 72, className: 'testi__side-avatar testi__side-avatar--tr', alt: 'Client' },
-  { src: '/avatar1.png', size: 60, className: 'testi__side-avatar testi__side-avatar--mr', alt: 'Client' },
-  { src: '/avatar5.png', size: 110, className: 'testi__side-avatar testi__side-avatar--br', alt: 'Client' },
+  { src: '/avatar3.png', size: 100, className: 'testi__side-avatar testi__side-avatar--tl', alt: 'Client' },
+  { src: '/avatar2.png', size: 130, className: 'testi__side-avatar testi__side-avatar--ml', alt: 'Client' },
+  { src: '/avatar4.png', size: 90, className: 'testi__side-avatar testi__side-avatar--bl', alt: 'Client' },
+
+  { src: '/avatar6.png', size: 110, className: 'testi__side-avatar testi__side-avatar--tr', alt: 'Client' },
+  { src: '/avatar1.png', size: 160, className: 'testi__side-avatar testi__side-avatar--mr', alt: 'Client' },
+  { src: '/avatar5.png', size: 120, className: 'testi__side-avatar testi__side-avatar--br', alt: 'Client' },
 ]
 
 export default function Testimonials() {
