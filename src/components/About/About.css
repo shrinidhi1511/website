@@ -1,0 +1,233 @@
+/* ===== About Section ===== */
+.about {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-white);
+}
+
+.about__bg-blob--top {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 300px;
+  background: radial-gradient(ellipse at center, rgba(255, 200, 212, 0.35) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Rows */
+.about__row {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  padding: 4rem 0;
+}
+
+.about__row--1 {
+  flex-direction: row;
+}
+
+.about__row--2 {
+  flex-direction: row;
+  padding-top: 2rem;
+}
+
+/* Content */
+.about__content {
+  flex: 1;
+  max-width: 550px;
+}
+
+.about__content--right {
+  max-width: 550px;
+}
+
+.about__heading {
+  font-family: var(--font-primary);
+  font-size: clamp(3.2rem, 6vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -1px;
+  color: var(--color-text-primary);
+  margin-bottom: 1.25rem;
+}
+
+/* Monospace word in second heading */
+.about__mono {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 700;
+}
+
+.about__underline {
+  width: 100%;
+  height: 3px;
+  background: var(--color-accent-yellow);
+  border-radius: 2px;
+  margin-bottom: 1.25rem;
+  max-width: 340px;
+}
+
+.about__body {
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.90;
+  margin-bottom: 1.5rem;
+  max-width: 420px;
+}
+
+.about__read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  transition: gap var(--transition-fast);
+}
+
+.about__read-more:hover {
+  gap: 1.25rem;
+}
+
+.about__line {
+  display: inline-block;
+  width: 60px;
+  height: 1.5px;
+  background: var(--color-text-primary);
+  border-radius: 1px;
+  transition: width var(--transition-base);
+}
+
+.about__read-more:hover .about__line {
+  width: 80px;
+}
+
+/* Image with circle clip */
+.about__image-wrap {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.about__image-wrap--left {
+  justify-content: flex-start;
+}
+
+.about__circle-img {
+  width: 460px;
+  height: 460px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+  position: relative;
+  z-index: 1;
+  transition: transform var(--transition-slow);
+}
+
+.about__circle-img:hover {
+  transform: scale(1.02);
+}
+
+.about__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Red Triangles */
+.about__triangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  z-index: 2;
+}
+
+.about__triangle--top-right {
+  top: -20px;
+  right: 30px;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 80px solid #e8524a;
+}
+
+.about__triangle--bottom-left {
+  bottom: -20px;
+  left: 50px;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 80px solid #e8524a;
+}
+
+/* Wavy path between sections */
+.about__wave {
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  width: 900px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+/* Reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+.reveal.slide-left {
+  transform: translateX(-40px);
+}
+
+.reveal.slide-right {
+  transform: translateX(40px);
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+
+  .about__row--1,
+  .about__row--2 {
+    flex-direction: column;
+    gap: 2.5rem;
+    padding: 3rem 0;
+  }
+
+  .about__row--2 .about__image-wrap {
+    order: -1;
+  }
+
+  .about__circle-img {
+    width: 280px;
+    height: 280px;
+  }
+
+  .about__content {
+    max-width: 550px;
+  }
+
+  .about__content--right {
+    max-width: 550px;
+  }
+}
+
+@media (max-width: 576px) {
+  .about__circle-img {
+    width: 460px;
+    height: 460px;
+  }
+
+  .about__heading {
+    font-size: clamp(3.5rem, 6vw, 5.5rem);
+  }
+}

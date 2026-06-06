@@ -1,0 +1,255 @@
+/* ===========================
+   Design System – Elementum
+   =========================== */
+
+:root {
+  /* Colors */
+  --color-white: #ffffff;
+  --color-black: #0a0a0a;
+  --color-text-primary: #111111;
+  --color-text-secondary: #555555;
+  --color-text-muted: #888888;
+
+  /* Accent colors from design */
+  --color-accent-green: #c9e8c7;
+  --color-accent-pink: #f8c8d4;
+  --color-accent-coral: #e8524a;
+  --color-accent-yellow: #f5c842;
+  --color-accent-purple: #7b4fd6;
+  --color-accent-blue: #1e88e5;
+  --color-section-mint: #d8ede0;
+
+  /* Typography */
+  --font-primary: 'Space Grotesk', sans-serif;
+  --font-secondary: 'Inter', sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2.5rem;
+  --spacing-xl: 4rem;
+  --spacing-2xl: 6rem;
+
+  /* Border radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.35s ease;
+  --transition-slow: 0.6s ease;
+}
+
+/* ===== Reset ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-secondary);
+  color: var(--color-text-primary);
+  background-color: var(--color-white);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ===== Utility Classes ===== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.highlighted-green {
+  background-color: var(--color-accent-green);
+  border-radius: 8px;
+  padding: 0 6px 2px;
+  display: inline;
+}
+
+.highlighted-pink {
+  background-color: var(--color-accent-pink);
+  border-radius: 8px;
+  padding: 0 6px 2px;
+  display: inline;
+}
+
+.underline-yellow {
+  position: relative;
+  display: inline-block;
+}
+
+.underline-yellow::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-accent-yellow);
+  border-radius: 2px;
+}
+
+.underline-blue {
+  position: relative;
+  display: inline-block;
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent-blue);
+  text-underline-offset: 6px;
+  text-decoration-thickness: 3px;
+}
+
+/* ===== Animations ===== */
+@keyframes float-up-down {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes float-sideways {
+  0%, 100% { transform: translateX(0px) rotate(0deg); }
+  50% { transform: translateX(8px) rotate(3deg); }
+}
+
+@keyframes draw-path {
+  from { stroke-dashoffset: 1000; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.7s ease forwards;
+}
+
+.animate-float {
+  animation: float-up-down 4s ease-in-out infinite;
+}
+
+/* ===== Circle Avatar ===== */
+.avatar-circle {
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* ===== Section Spacing ===== */
+section {
+  padding: var(--spacing-xl) 0;
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+/* ===== Responsive Helpers ===== */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+  section {
+    padding: var(--spacing-lg) 0;
+  }
+}
+
+/* ===== Hero-to-About transition gradient ===== */
+.hero-bottom-glow {
+  width: 100%;
+  height: 180px;
+  background: radial-gradient(ellipse 60% 100% at 50% 100%,
+    rgba(255, 190, 210, 0.45) 0%,
+    transparent 80%);
+  pointer-events: none;
+  margin-top: -60px;
+  position: relative;
+  z-index: 0;
+}
